@@ -1,5 +1,4 @@
 var router = require('express').Router();
-var sg = require('sendgrid')('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');
 
 router.post('/mail', function(req, res) {
     var helper = require('sendgrid').mail;
