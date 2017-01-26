@@ -5,7 +5,7 @@ var donate = React.createClass({
 	render: function() {
 		return (
 			<section className="container col-md-8 col-md-offset-2">
-			  <p>Thank you for your interest! Tools With Impact is 100% non-profit! We are just a group of dedicated students working towards making a difference. A donation of any sum can have a huge impact on the lives of many.</p>
+			  <p>The Donate Now buttons looks kind of small and sketchy, if you could change the size and style that would be great.</p>
 			  <br />
 			    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" className="text-center">
 			        <input type="hidden" name="cmd" value="_s-xclick" />

@@ -9,9 +9,20 @@ var about = React.createClass({
 		(timelines.length > 0) && initTimeline(timelines);
 	},
 	render: function() {
+		console.log(this.props.contents["About Us  - 2015 - 2016"])
 		return (
 			<div>
 			<section className="cd-horizontal-timeline container-full">
+			  <div className="container">
+			  	<h1>What is Tools With Impact</h1>
+			  	<p>Tools With Impact is a fully student-run non-profit organization dedicated to combating poverty in developing nations. Tools With Impact's current mission is to support underprivileged students by providing them with the necessary school supplies and equipment they need to attend and succeed in school. 
+	  			<br/ >
+	  			<br/ >
+				Established in September of 2013, Tools With Impact's original mission was to support the local development of villages in Mozambique through the donation of hand tools and essential equipment for building infrastructure. Tools With Impact successfully raised $21,000 and collected over $65,000 worth of tools throughout the 2013/14 and 2014/15 school years. 
+				<br />
+				<br />
+				Having raised enough tools to sufficiently supply many villages in Northern Mozambique, Tools With Impact's mission evolved last year to supporting underprivileged students. This is done through collection of donations which are then used to purchase school supplies overseas and help fund educational programs. Over 12 schools in Ottawa have worked together over the past few years to support underprivileged students in Mozambique, Mali and Ecuador. This year, Tools With Impact is forecasting to support  students in need from Costa Rica as well.</p>
+			  </div>
 			  <div className="container">
 			  	<h1>Our Timeline</h1>
 			  </div>
@@ -21,7 +32,8 @@ var about = React.createClass({
 			        <ol>
 			          <li><a href="#0" data-date="01/01/2013">2013-2014</a></li>
 			          <li><a href="#0" data-date="01/01/2014">2014-2015</a></li>
-			          <li><a href="#0" data-date="01/01/2015" className="selected">2015-2016</a></li>
+			          <li><a href="#0" data-date="01/01/2015" className="">2015-2016</a></li>
+			          <li><a href="#0" data-date="01/01/2016" className="selected">2016-2017</a></li>
 			        </ol>
 			        <span className="filling-line" aria-hidden="true"></span>
 			      </div>
@@ -31,15 +43,14 @@ var about = React.createClass({
 			  </div>
 			  <div className="events-content container">
 			    <ol>
-			      <li className="selected" data-date="01/01/2015">
+			      <li className="selected" data-date="01/01/2016">
+			        <h2>2016-2017</h2>
+			        <div dangerouslySetInnerHTML={{__html: this.props.contents["About Us - 2016 - 2017"]}} />
+			      </li>
+			      <li className="" data-date="01/01/2015">
 			        <h2>2015-2016</h2>
-			        <p>Throughout the 2013/14 and 2014/15 school years the students of Tools With Impact successfully raised $21,000 and collected over $65,000 worth of hand tools and equipment. This amount of tools was sufficient to fully supply many villages and communities in Northern Mozambique with the equipment necessary for their self-development. Thus, it was time for Tools With Impact to evolve its mission and to target another issue. </p>
-			        <br/>
-			        <br/>
-			        <p>The members of Tools With Impact strongly believe that helping developing regions overcome poverty begins with education. Thus, heading into the 2015/2016 school year Tools With Impact's new mission graduated to supporting and equipping underprivileged students with much needed school supplies and educational tools. Tools With Impact is currently in the application stages to become a registered charity with the Canadian Revenue Agency under this purpose. Having branched out to 12 schools across Ottawa, the members of Tools With Impact have been working very hard to help less fortunate students in Mozambique, Mali and Ecuador. Tools With Impact has already raised over $20,000 in donations this school year that will be going towards helping these unprivileged students receive an education. </p>
-			        <br/>
-			        <br/>
-			        <p>The <a href="http://www.teranfoundation.org"> Teran Foundation </a> and the <a href="http://www.tandanafoundation.org/main_page.html"> Tandana Foundation </a>have agreed to act as intermediaries for Tools With Impact through the purchasing and distribution of the school supplies to underequipped schools, as directed by Tools With Impact. Tools With Impact currently has ties with 52 schools in Mozambique through the Teran Foundation and many additional schools in Mali and Ecuador through the Tandana Foundation.</p>
+			        <div dangerouslySetInnerHTML={{__html: this.props.contents["About Us  - 2015 - 2016"]}} />
+			        <br />
 			      </li>
 
 			      <li data-date="01/01/2014">
@@ -73,12 +84,12 @@ var about = React.createClass({
 		    </section>
 			<section className="container">
 			    <div className="row">
-			    <div className="col-md-8">
-			    <p>In 2011, the Graves family participated in a volunteer mission to Mossuril, Mozambique, one of the poorest regions in Africa. Their experiences fostered a strong connection with this impoverished community and furthered a commitment to making a difference. In their various volunteer roles, whether it was building a puppet theatre to promote malaria and aids awareness, digging a trench for a local garden, or building the first community oven, it became evident that the growth and development of the community was severely hindered by a profound lack of basic hand tools and equipment. How can one of the poorest communities in Africa possibly rise from poverty without access to the necessary tools needed to do so? It was this realization that empowered Matt and Zach Graves to subsequently develop Tools With Impact. Tools With Impact began as just a small initiative, originally consisting of just 20 students from Merivale High School, with the goal of supporting Mossuril's local development through the donation of hand tools and essential equipment. Two years later, Tools With Impact is established at 12 schools in Ottawa and now has a new mission of supporting students in need by supplying them with school supplies and educational tools. </p>
-			    </div>
-			    <div className="col-md-4">
-			        <img className="img-responsive" src="img/pic (33).JPG"/>
-			    </div>
+				    <div className="col-md-8">
+				    	<p>In 2011, the Graves family participated in a volunteer mission to Mossuril, Mozambique, one of the poorest regions in Africa. Their experiences fostered a strong connection with this impoverished community and furthered a commitment to making a difference. In their various volunteer roles, whether it was building a puppet theatre to promote malaria and aids awareness, digging a trench for a local garden, or building the first community oven, it became evident that the growth and development of the community was severely hindered by a profound lack of basic hand tools and equipment. How can one of the poorest communities in Africa possibly rise from poverty without access to the necessary tools needed to do so? It was this realization that empowered Matt and Zach Graves to subsequently develop Tools With Impact. Tools With Impact began as just a small initiative, originally consisting of just 20 students from Merivale High School, with the goal of supporting Mossuril's local development through the donation of hand tools and essential equipment. Two years later, Tools With Impact is established at 12 schools in Ottawa and now has a new mission of supporting students in need by supplying them with school supplies and educational tools. </p>
+				    </div>
+				    <div className="col-md-4">
+				        <img className="img-responsive" src="img/pic (33).JPG"/>
+				    </div>
 			    </div>
 			  </section>
 		  </div>

@@ -5,6 +5,12 @@ var recentnews = React.createClass({
 
 	componentDidMount(){
 		SocialConfig.template = '/templates/template.html';
+		SocialConfig.callback = function(){
+	      $('.social-feed-container').isotope({
+	        // options
+	        itemSelector: '.social-media',
+	      });
+	  	};
 	    $('.social-feed-container').socialfeed(SocialConfig);
 	    $('.social-feed-container').imagesLoaded( function() {
 	      $('.social-feed-container').isotope({

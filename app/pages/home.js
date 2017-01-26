@@ -9,13 +9,18 @@ export default React.createClass({
 		  $(this).countTo();
 		});
 		SocialConfig.template = '/templates/template.html';
+		SocialConfig.callback = function(){
+	      $('.social-feed-container-small').isotope({
+	        // options
+	        itemSelector: '.social-media',
+	      });
+	  	};
 
 	    $('.social-feed-container-small').socialfeed(SocialConfig);
 	    $('.social-feed-container-small').imagesLoaded( function() {
 	      $('.social-feed-container-small').isotope({
 	        // options
 	        itemSelector: '.social-media',
-	        layoutMode: 'masonry'
 	      });
 	    });
 	},
@@ -69,7 +74,7 @@ export default React.createClass({
             </div>
             <div className= "row mission" >
 				<div className= "col-md-12">
-					<p>Tools With Impact's mission is to combat poverty in developing nations by providing underprivileged students with the necessary school supplies and equipment needed to attend and succeed in school.</p>
+					<p>{this.props.contents["Homepage - Our Cause"]}</p>
 					<br/>
 					<a href ="about.php"><button className= "btn btn-primary">Learn More About Our Organization</button></a>
 					<a href ="donate.php"><button className= "btn btn-primary">Donate Now</button></a>
@@ -90,7 +95,15 @@ export default React.createClass({
 			<div className= "info-content">
 				<img src="img/icons/pin.png"/>
 				<br/>
-	     		<span className= "counter-prefix">$</span><span className= "counter" data-from="0" data-to="41000"></span>
+	     		<span className= "counter-prefix">$</span>
+	     		<span className= "counter" data-from="0"
+	     			data-to={this.props.contents["Homepage - Donations"]?
+	     				parseInt(
+	     					this.props.contents["Homepage - Donations"]
+		     					.replace(/(<([^>]+)>)/ig,"")
+		     					.replace(/,/g, ""))
+	     				:""}
+     				></span>
 	     		<h3>Donations</h3>
 			</div>
 		</div>
