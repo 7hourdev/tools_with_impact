@@ -74,7 +74,7 @@ export default React.createClass({
             </div>
             <div className= "row mission" >
 				<div className= "col-md-12">
-					<p>{this.props.contents["Homepage - Our Cause"]}</p>
+					<p dangerouslySetInnerHTML={{__html: this.props.contents["Homepage - Our Cause"]}} />
 					<br/>
 					<a href ="about.php"><button className= "btn btn-primary">Learn More About Our Organization</button></a>
 					<a href ="donate.php"><button className= "btn btn-primary">Donate Now</button></a>
@@ -118,7 +118,7 @@ export default React.createClass({
 	</div>
 	<section className= "container" id = "join">
 		<h1>Social Media</h1>
-		<div className= "row social-media-button-group">
+		<div className= "social-media-button-group">
 			<a target="blank" href ="https://www.facebook.com/toolswithimpact"><button className= "btn btn-primary text-center"><i className="fa fa-facebook"></i>Facebook</button></a>
 			<a target="blank" href ="https://twitter.com/toolswithimpact"><button className= "btn btn-primary text-center"><i className="fa fa-twitter"></i>Twitter</button></a>
 			<a target="blank" href ="https://www.instagram.com/toolswithimpact/"><button className= "btn btn-primary text-center"><i className="fa fa-instagram"></i>Instagram</button></a>
