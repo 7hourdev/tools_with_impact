@@ -4,7 +4,7 @@ var sg = require('sendgrid')('SG.XR1mGCiPTjmM5uym44SfMw.ykd4zVKlQiT_3rO6Kpa-qyiL
 router.post('/mail', function(req, res) {
     var helper = require('sendgrid').mail;
     var from_email = new helper.Email(req.body.email);
-    var to_email = new helper.Email("david.lky.123@gmail.com");
+    var to_email = new helper.Email("toolswithimpact@gmail.com");
     var subject = '[TOOLSWITHIMPACT WEBSITE] Message from ' + req.body.name;
     var content = new helper.Content('text/plain', req.body.comments);
     var mail = new helper.Mail(from_email, subject, to_email, content);
