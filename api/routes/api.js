@@ -5,7 +5,7 @@ sgMail.setApiKey(config.sendgrid_key);
 
 router.post('/mail', function(req, res) {
     const msg = {
-      to: "david.lky.123@gmail.com",
+      to: "toolswithimpact@gmail.com",
       from: req.body.email,
       subject: '[TOOLSWITHIMPACT WEBSITE] Message from ' + req.body.name,
       text: req.body.comments,
