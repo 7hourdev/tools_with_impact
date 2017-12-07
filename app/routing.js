@@ -1,6 +1,9 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, browserHistory, IndexRoute } from 'react-router'
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
+
+import ScrollToTop from './helper/ScrollToTop';
 
 import Home from './pages/home';
 import About from './pages/about';
@@ -9,18 +12,47 @@ import Donate from './pages/donate';
 import FAQ from './pages/faq';
 import RecentNews from './pages/recentnews';
 import Sponsors from './pages/sponsors';
-import App from './app';
 
-render((
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <IndexRoute component={Home}/>
-      <Route path="about" component={About}/>
-      <Route path="contact" component={Contact}/>
-      <Route path="faq" component={FAQ}/>
-      <Route path="donate" component={Donate}/>
-      <Route path="recentnews" component={RecentNews}/>
-      <Route path="sponsors" component={Sponsors}/>
-    </Route>
-  </Router>
-), document.getElementById('app'))
+import Header from './modules/header'
+import Footer from './modules/footer'
+
+import Contents from 'contents'
+
+import {observer} from 'mobx-react';
+
+@observer
+class App extends React.Component{
+  render(){
+    return(
+      <Router>
+        <ScrollToTop>
+          <div>
+            <Header/>
+              <TransitionGroup>
+                <CSSTransition
+                  key={location.key}
+                  classNames="fade"
+                  timeout={300, 300}
+                >
+                  {Contents.contents!=undefined?<div>
+                    <Switch>
+                      <Route exact path="/about" component={About}/>
+                      <Route exact path="/contact" component={Contact}/>
+                      <Route exact path="/faq" component={FAQ}/>
+                      <Route exact path="/donate" component={Donate}/>
+                      <Route exact path="/recentnews" component={RecentNews}/>
+                      <Route exact path="/sponsors" component={Sponsors}/>
+                      <Route exact path="/" component={Home}/>
+                    </Switch>
+                  </div>:<div/>}
+                </CSSTransition>
+              </TransitionGroup>
+            <Footer/>
+          </div>
+        </ScrollToTop>
+      </Router>
+    );
+  }
+}
+
+render(<App/>, document.getElementById('app'))

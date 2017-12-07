@@ -1,4 +1,5 @@
 var React = require('react');
+import Contents from 'contents'
 
 var donate = React.createClass({
 

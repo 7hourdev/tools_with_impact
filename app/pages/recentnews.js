@@ -1,5 +1,6 @@
 var React = require('react');
 import SocialConfig from './config/social_feed_config'
+import Contents from 'contents'
 
 var recentnews = React.createClass({
 

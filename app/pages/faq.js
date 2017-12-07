@@ -1,5 +1,6 @@
 var React = require('react');
 import FAQ from "./component/faq_section"
+import Contents from 'contents'
 
 var faq = React.createClass({
 

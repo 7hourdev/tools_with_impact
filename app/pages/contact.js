@@ -1,8 +1,8 @@
 var React = require('react');
 import URL from '../helper/url';
 
-var contact = React.createClass({
-  componentDidMount: function() {
+export default class contact extends React.Component{
+  componentDidMount() {
     var mapOptions = {
         // How zoomed in you want the map to start at (always required)
         zoom: 11,
@@ -32,13 +32,15 @@ var contact = React.createClass({
         infowindow.open(map, marker);
       });
     }
-  },
-  getInitialState(){
-    return({
+  }
+  constructor(props){
+    super(props);
+    this.state = {
       submit:false
-    });
-  },
-  submit:function (event) {
+    };
+  }
+  submit(event) {
+    var self = this;
     if(!this.state.submit){
       this.setState({submit:true});
       event.preventDefault();
@@ -54,7 +56,7 @@ var contact = React.createClass({
           $("#message").text(data.msg);
           window.scrollTo(0,0);
           if(data.error){
-            this.setState({submit:false});
+            self.setState({submit:false});
             $("#message").addClass("alert-warning");
             $("#message").removeClass("alert-success");
           }else{          
@@ -64,9 +66,9 @@ var contact = React.createClass({
         }
       });
     }
-  },
-  render: function() {
-    var attr = <button onClick={this.submit} type="submit" id="submit" className="btn btn-primary submit-btn" {...this.state.submit?"disabled":""} >Send message</button>;
+  }
+  render() {
+    var attr = <button onClick={this.submit.bind(this)} type="submit" id="submit" className="btn btn-primary submit-btn" disabled={this.state.submit} >Send message</button>;
     return (
       <div>
         <section className="container">
@@ -75,7 +77,7 @@ var contact = React.createClass({
               <h1>Contact Us</h1>
               <p>Thanks for your interest! Feel free to drop off a message or email us at <a href="mailto:toolswithimpact@gmail.com">toolswithimpact@gmail.com</a>.</p>
               <br />
-              <p>We greatly appreciate <a href ="donate.php">Donations</a> of any sum, even a little bit can have a huge impact on a someone in need!</p>
+              <p>We greatly appreciate <a href ="/donate">Donations</a> of any sum, even a little bit can have a huge impact on a someone in need!</p>
             </div>
             <div className="col-md-6">
               <p id="message" className="alert"></p>
@@ -105,7 +107,7 @@ var contact = React.createClass({
         <section className="container" id ="join">
           <div className="row">
             <div className="col-md-8">
-              <p>If you wish to donate to Tools With Impact, please click <a href ="donate.php">here</a>.  You may also drop off any donations at Merivale High School (1755 Merivale Road). If you are a student that would like to join our cause, or know someone that might be interested, please feel free to contact Tools With Impact at <a href="mailto@toolswithimpact@gmail.com"> toolswithimpact@gmail.com </a> or through our <a href ="contact.php">Contact Us</a> page. Tools With Impact is always excited for potential new branches at different schools!</p>
+              <p>If you wish to donate to Tools With Impact, please click <a href ="/donate">here</a>.  You may also drop off any donations at Merivale High School (1755 Merivale Road). If you are a student that would like to join our cause, or know someone that might be interested, please feel free to contact Tools With Impact at <a href="mailto@toolswithimpact@gmail.com"> toolswithimpact@gmail.com </a> or through our <a href ="/contact">Contact Us</a> page. Tools With Impact is always excited for potential new branches at different schools!</p>
             </div>
             <div className="col-md-4" id="map">
             </div>
@@ -114,7 +116,4 @@ var contact = React.createClass({
       </div>
     );
   }
-
-});
-
-module.exports = contact;
+};

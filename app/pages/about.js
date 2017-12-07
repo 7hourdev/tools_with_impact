@@ -1,5 +1,6 @@
 var React = require('react');
 import initTimeline from '../helper/timeline';
+import Contents from 'contents'
 
 var about = React.createClass({
 	componentDidMount: function() {
@@ -9,7 +10,7 @@ var about = React.createClass({
 		(timelines.length > 0) && initTimeline(timelines);
 	},
 	render: function() {
-		console.log(this.props.contents["About Us  - 2015 - 2016"])
+		console.log(Contents.contents["About Us  - 2015 - 2016"])
 		return (
 			<div>
 			<section className="cd-horizontal-timeline container-full">
@@ -45,11 +46,11 @@ var about = React.createClass({
 			    <ol>
 			      <li className="selected" data-date="01/01/2016">
 			        <h2>2016-2017</h2>
-			        <div dangerouslySetInnerHTML={{__html: this.props.contents["About Us - 2016 - 2017"]}} />
+			        <div dangerouslySetInnerHTML={{__html: Contents.contents["About Us - 2016 - 2017"]}} />
 			      </li>
 			      <li className="" data-date="01/01/2015">
 			        <h2>2015-2016</h2>
-			        <div dangerouslySetInnerHTML={{__html: this.props.contents["About Us  - 2015 - 2016"]}} />
+			        <div dangerouslySetInnerHTML={{__html: Contents.contents["About Us  - 2015 - 2016"]}} />
 			        <br />
 			      </li>
 

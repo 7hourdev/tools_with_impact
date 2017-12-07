@@ -1,4 +1,5 @@
 var React = require('react');
+import Contents from 'contents'
 
 var sponsors = React.createClass({
 
@@ -7,7 +8,7 @@ var sponsors = React.createClass({
 		<div>
 			<section className="container">
 		        <h1>Thank you to all our sponsors!</h1>
-				<p>Please <a href="contact.php"> contact us </a> or e-mail <b> toolswithimpact@gmail.com </b> if you wish to help our cause and sponsor!</p>
+				<p>Please <a href="/contact"> contact us </a> or e-mail <b> toolswithimpact@gmail.com </b> if you wish to help our cause and sponsor!</p>
 		        <br />
 		        <div className="sponsors row">
 		            <div className="col-md-3">
